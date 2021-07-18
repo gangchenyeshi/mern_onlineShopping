@@ -1,7 +1,6 @@
 const Users = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { findOne } = require('../models/userModel');
 
 const userCtrl = {
     register: async (req, res) => {
@@ -64,7 +63,7 @@ const userCtrl = {
                 httpOnly: true,
                 path: '/user/refresh_token'
             })
-            res.status(200).json({ message: "Login success." })
+            res.status(200).json({ accessToken })
         } catch (err) {
             return res.status(500).json({ message: err.message })
         }
@@ -76,6 +75,16 @@ const userCtrl = {
                 path: '/user/refresh_token'
             })
             res.status(200).json({ message: "Logged out" })
+        } catch (err) {
+            return res.status(500).json({ message: err.message })
+        }
+    },
+    
+    getUser: async (req, res) => {
+        try {
+            const user = await Users.findById(req.user.id).select('-password')
+            if(!user) return res.status(400).json({message: err.message})
+            res.json(user)
         } catch (err) {
             return res.status(500).json({ message: err.message })
         }
