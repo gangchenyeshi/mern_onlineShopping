@@ -47,6 +47,7 @@ const userCtrl = {
             return res.status(500).json({ message: err.message })
         }
     },
+
     login: async (req, res) => {
         try {
             const { email, password } = req.body;
@@ -63,8 +64,18 @@ const userCtrl = {
                 httpOnly: true,
                 path: '/user/refresh_token'
             })
-            console.log(accessToken)
             res.status(200).json({ message: "Login success." })
+        } catch (err) {
+            return res.status(500).json({ message: err.message })
+        }
+    },
+
+    logout: async (req, res) => {
+        try {
+            res.clearCookie('refreshToken', {
+                path: '/user/refresh_token'
+            })
+            res.status(200).json({ message: "Logged out" })
         } catch (err) {
             return res.status(500).json({ message: err.message })
         }
