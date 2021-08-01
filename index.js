@@ -27,6 +27,8 @@ mongoose.connect(URL, {
 
 //Routing
 app.use('/user', require('./router/userRouter'));
+app.use('/api', require('./router/categoryRouter'));
+app.use('/api', require('./router/uploadRouter'));
 
 //Listening to Server PORT
 app.listen(PORT, () => {
