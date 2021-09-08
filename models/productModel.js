@@ -28,6 +28,8 @@ const productSchema = new mongoose.Schema({
     sold: {
         type: Number, default: 0
     },
+}, {
+    timestamps: true,
 })
 
 module.exports = mongoose.model('Products', productSchema)
