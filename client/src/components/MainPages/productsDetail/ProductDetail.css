@@ -1,0 +1,16 @@
+h3 {
+    text-transform: capitalize;
+    color: darkblue;
+    font-weight: 1.5rem;
+    letter-spacing: 2px;
+}
+a {
+    width: 30%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 8px;
+    margin: 0 5px;
+}

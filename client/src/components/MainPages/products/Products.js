@@ -5,10 +5,10 @@ import "./Products.css";
 
 function Products() {
     const state = useContext(GlobalState);
-    console.log("state product :", state)
+    // console.log("state product :", state)
 
     const [products] = state.productsAPI.products
-    console.log("products :", products)
+    // console.log("products :", products)
     return (
         <div className="container-fluid">
             <div className="row d-flex justify-content-center">

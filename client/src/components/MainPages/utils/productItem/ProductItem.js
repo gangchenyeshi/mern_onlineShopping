@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import BtnRender from './BtnRender';
 import "./ProductItem.css";
 
 function ProductItem({ product }) {
@@ -12,17 +12,8 @@ function ProductItem({ product }) {
                 <span>$ {product.price}.00</span>
                 <p>{product.description}</p>
             </div>
-
-            <div className="buttons">
-                <Link id="btnBuy" className="btn btn-primary" to="#!">
-                    Buy
-                </Link>
-                <Link id="btnView" class="btn btn-success" to="#">
-                    View
-                </Link>
-            </div>
+            <BtnRender product={product} />
         </div>
-
     )
 }
 

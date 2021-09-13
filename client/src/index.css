@@ -11,3 +11,6 @@
 
 /*----------Products------------*/
 @import url('./components/MainPages/products/Products.css');
+
+/*----------Product Detail------------*/
+@import url('./components/MainPages/productsDetail/ProductDetail.css');
