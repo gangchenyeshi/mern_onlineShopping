@@ -14,3 +14,6 @@
 
 /*----------Product Detail------------*/
 @import url('./components/MainPages/productsDetail/ProductDetail.css');
+
+/*------------- Login ------------*/
+@import url('./components/MainPages/auth/Login.css');

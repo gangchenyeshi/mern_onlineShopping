@@ -11,7 +11,7 @@ function BtnRender({ product }) {
                 Buy
             </Link>
             <Link id="btnView"
-                class="btn btn-primary"
+                className="btn btn-primary"
                 to={`product_detail/${product._id}`}>
                 View
             </Link>

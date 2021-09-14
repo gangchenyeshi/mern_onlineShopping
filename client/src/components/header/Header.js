@@ -17,7 +17,7 @@ const Header = () => {
 
             <div className="logo">
                 <h1>
-                    <Link>My Shop</Link>
+                    <Link to="#">My Shop</Link>
                 </h1>
             </div>
 

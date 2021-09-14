@@ -1,0 +1,17 @@
+
+.btnLink a {
+    color: #0d6efd;
+    /* color: rgb(88, 142, 179); */
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem
+  }
+  /* mouse over link */
+.btnLink a:hover {
+    color: hotpink;
+  }
+.btnLink div {
+  margin: 8px 1px;
+}
+ 

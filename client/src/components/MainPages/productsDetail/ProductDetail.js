@@ -31,7 +31,7 @@ function ProductDetail() {
             <div className="row">
                 <div className="col-12 col-md-5">
                     <img src={detailProduct.images.url} alt=""
-                        class="img-thumbnail rounded float-left"
+                        className="img-thumbnail rounded float-left"
                         alt="Responsive image" />
                 </div>
                 <div className="col-12 col-md-6">
