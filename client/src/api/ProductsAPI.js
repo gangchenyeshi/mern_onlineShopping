@@ -7,16 +7,16 @@ function ProductsAPI() {
     const getProducts = async () => {
         try {
             const res = await axios.get(`/api/products`)
-            console.log("respond :", res.data)
+            // console.log("respond :", res.data)
             setProducts(res.data);
         } catch (err) {
-            console.log(err.message)
+            console.log(err.response.data.msg)
         }
     };
 
     useEffect(() => {
         getProducts();
-    }, [])
+    }, []);
 
 
     return {

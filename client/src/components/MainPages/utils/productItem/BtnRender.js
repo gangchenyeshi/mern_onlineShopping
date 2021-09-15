@@ -12,7 +12,7 @@ function BtnRender({ product }) {
             </Link>
             <Link id="btnView"
                 className="btn btn-primary"
-                to={`product_detail/${product._id}`}>
+                to={`/product_detail/${product._id}`}>
                 View
             </Link>
         </div>

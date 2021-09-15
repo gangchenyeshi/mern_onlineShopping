@@ -14,6 +14,7 @@ function ProductDetail() {
     const [detailProduct, setDetailProduct] = useState([])
 
     useEffect(() => {
+        console.log("re render")
         if (params.id) {
             products.forEach(product => {
                 if (product._id === params.id) {
@@ -32,7 +33,7 @@ function ProductDetail() {
                 <div className="col-12 col-md-5">
                     <img src={detailProduct.images.url} alt=""
                         className="img-thumbnail rounded float-left"
-                        alt="Responsive image" />
+                         />
                 </div>
                 <div className="col-12 col-md-6">
                     <h3>{detailProduct.title}</h3>
@@ -55,6 +56,7 @@ function ProductDetail() {
             </div>
 
             <div className="row d-flex justify-content-center">
+                <h2>Similar Products</h2>
                 {
                     products.map(product => {
                         return product.category === detailProduct.category

@@ -12,6 +12,6 @@ router.get('/refresh_token', userCtrl.refreshToken);
 
 router.get('/logout', userCtrl.logout);
 
-router.get('/info', auth, AuthAdmin, userCtrl.getUser);
+router.get('/info', auth, userCtrl.getUser);
 
 module.exports = router;

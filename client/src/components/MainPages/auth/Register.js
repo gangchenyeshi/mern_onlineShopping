@@ -21,7 +21,7 @@ function Register() {
             localStorage.setItem("firstLogin", true)
             window.location.href = "/login"
         } catch (err) {
-            console.log(err.message)
+            alert(err.response.data.message)
         }
     }
 
