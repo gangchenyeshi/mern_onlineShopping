@@ -14,4 +14,6 @@ router.get('/logout', userCtrl.logout);
 
 router.get('/info', auth, userCtrl.getUser);
 
+router.patch('/addcart', auth, userCtrl.addCart)
+
 module.exports = router;

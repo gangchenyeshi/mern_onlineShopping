@@ -17,3 +17,6 @@
 
 /*------------- Login ------------*/
 @import url('./components/MainPages/auth/Login.css');
+
+/*------------- Cart ------------*/
+@import url('./components/MainPages/cart/Cart.css');

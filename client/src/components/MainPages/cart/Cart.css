@@ -1,0 +1,32 @@
+.cart {
+    position: relative;
+    border: 1px solid #ccc;
+    transform: scaleY(0.98);
+}
+.quantity span {
+    color: crimson;
+    padding: 0 16px;
+    font-weight: 600;
+}
+.quantity button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #777;
+    border-radius: 50%;
+    padding: 2px;
+    font-weight: 600;
+}
+.delete {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    color: crimson;
+    font-weight: 600;
+    cursor: pointer;
+}
+.total h3 {
+    color: crimson;
+}
+.total .payment{
+    cursor: pointer;
+}

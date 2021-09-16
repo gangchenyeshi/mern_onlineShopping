@@ -5,13 +5,15 @@ import Menu from './icon/menu.svg';
 import Closed from './icon/closed.svg';
 import Cart from './icon/cart.svg';
 import "./Header.css"
+import axios from 'axios';
 
 const Header = () => {
     const state = useContext(GlobalState);
     console.log('UseContext state :', state)
 
-    const [isLogged, setIsLogged] = state.userAPI.isLogged
-    const [isAdmin, setIsAdmin] = state.userAPI.isAdmin
+    const [isLogged] = state.userAPI.isLogged;
+    const [isAdmin] = state.userAPI.isAdmin;
+    const [cart] = state.userAPI.cart
 
     const adminRouter = () => {
         return (
@@ -20,14 +22,19 @@ const Header = () => {
                 <li><Link to="/category">Categories</Link></li>
             </>
         )
-    }
+    };
     const loggedUser = () => {
         return (
             <>
                 <li><Link to="/history">History</Link></li>
-                <li><Link to="/">Logout</Link></li>
+                <li><Link to="/" onClick={logoutUser}>Logout</Link></li>
             </>
         )
+    };
+    const logoutUser = async () => {
+        await axios.get('/user/logout')
+        localStorage.clear()
+        window.location.href = "/"
     }
     return (
         <header>
@@ -42,7 +49,7 @@ const Header = () => {
             </div>
 
             <ul>
-                <li><Link to="/">{isAdmin ? "Shop" : "Product"}</Link></li>
+                <li><Link to="/">{isAdmin ? "Product" : "Shop"}</Link></li>
                 {isAdmin && adminRouter()}
                 {
                     isLogged
@@ -60,7 +67,7 @@ const Header = () => {
             {isAdmin ? ''
                 :
                 <div className="cartIcon">
-                    <span>0</span>
+                    <span>{cart.length}</span>
                     <Link to="/cart">
                         <img src={Cart} alt="" width="30" />
                     </Link>

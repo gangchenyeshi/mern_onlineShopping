@@ -79,12 +79,26 @@ const userCtrl = {
             return res.status(500).json({ message: err.message })
         }
     },
-    
+
     getUser: async (req, res) => {
         try {
             const user = await Users.findById(req.user.id).select('-password')
-            if(!user) return res.status(400).json({message: err.message})
+            if (!user) return res.status(400).json({ message: err.message })
             res.json(user)
+        } catch (err) {
+            return res.status(500).json({ message: err.message })
+        }
+    },
+
+    addCart: async (req, res) => {
+        try {
+            const user = await Users.findById(req.user.id)
+            if (!user) return res.status(400).json({ msg: "User does not exist." })
+            await Users.findOneAndUpdate({ _id: req.user.id }, {
+                cart: req.body.cart
+            })
+            console.log("cart :", req.body.cart)
+            return res.status(200).json({msg: "Added to Cart"})
         } catch (err) {
             return res.status(500).json({ message: err.message })
         }

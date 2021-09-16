@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { GlobalState } from '../../GlobalState';
 import Login from './auth/Login';
 import Register from './auth/Register';
 import Cart from './cart/Cart';
@@ -9,14 +10,19 @@ import NotFound from './utils/notFound/NotFound';
 
 
 const MainPages = () => {
+    const state = useContext(GlobalState);
+    const [isLogged] = state.userAPI.isLogged;
+
     return (
         <Switch>
-            <Route path="/"  exact component={Products}/>
-            <Route path="/login"  exact component={Login}/>
-            <Route path="/register"  exact component={Register}/>
-            <Route path="/cart"  exact component={Cart}/>
+            <Route path="/" exact component={Products} />
+
+            <Route path="/login" exact component={isLogged ? NotFound : Login} />
+            <Route path="/register" exact component={isLogged ? NotFound : Register} />
+            
+            <Route path="/cart" exact component={Cart} />
             <Route path="/product_detail/:id" exact component={ProductDetail} />
-            <Route path="*"  exact component={NotFound}/>
+            <Route path="*" exact component={NotFound} />
         </Switch>
     )
 }

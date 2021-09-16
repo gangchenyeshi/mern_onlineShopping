@@ -9,6 +9,8 @@ function Products() {
 
     const [products] = state.productsAPI.products
     // console.log("products :", products)
+
+    const [isAdmin] = state.userAPI.isAdmin
     return (
 
         <div className="container-fluid">
@@ -18,7 +20,10 @@ function Products() {
                         {
                             products.map(product => (
                                 <div className="col-6 col-md-4 col-lg-3">
-                                    <ProductItem key={product._id} product={product} />
+                                    <ProductItem key={product._id}
+                                        product={product}
+                                        isAdmin={isAdmin}
+                                    />
                                 </div>
 
                             ))

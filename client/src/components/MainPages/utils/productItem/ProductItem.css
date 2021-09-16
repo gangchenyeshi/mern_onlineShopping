@@ -7,6 +7,11 @@
     position: relative;
 
 }
+.productCard input{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
 .productCard img{
     width: 100%;
     height: 300px;
@@ -46,10 +51,10 @@
 .buttons a{
     width: 50%;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: #fff;
-    font-weight: 600;
-    letter-spacing: 2px;
-    padding: 8px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 4px;
     margin: 0 5px;
 } 
