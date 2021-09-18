@@ -16,7 +16,7 @@ function Products() {
         <div className="container-fluid">
             {products.length !== 0
                 ? (
-                    <div className="row d-flex justify-content-center">
+                    <div className="row d-flex justify-content-between">
                         {
                             products.map(product => (
                                 <div className="col-6 col-md-4 col-lg-3">

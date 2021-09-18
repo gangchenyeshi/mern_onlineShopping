@@ -20,3 +20,7 @@
 
 /*------------- Cart ------------*/
 @import url('./components/MainPages/cart/Cart.css');
+
+
+/*------------- Category ------------*/
+@import url('./components/MainPages/categories/Categories.css');
