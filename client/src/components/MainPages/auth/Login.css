@@ -14,4 +14,9 @@
 .btnLink div {
   margin: 8px 1px;
 }
- 
+
+.forms{
+  border: 1px solid #555;
+  margin: 24px auto;
+  border-radius: 10px;
+}

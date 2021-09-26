@@ -14,11 +14,13 @@ header .logo {
 }
 header a {
     text-transform: uppercase;
+    text-decoration: none;
     color: rgb(0, 0, 0);
 }
 header ul li {
     display: inline;
-    padding: 0 16px;
+    list-style: none;
+    padding: 0 6px;
     opacity: 0.9;
 }
 header ul li:hover {

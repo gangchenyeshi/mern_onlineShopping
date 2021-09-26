@@ -82,7 +82,7 @@ function Categories() {
                                     <button type="submit"
                                         className="btn btn-primary mb-2 col-12"
                                     >
-                                        {onEdit ? "Update" : "Add"}
+                                        {onEdit ? "Update" : "Create"}
                                     </button>
                                 </div>
 

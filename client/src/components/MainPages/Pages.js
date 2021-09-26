@@ -7,6 +7,7 @@ import Cart from './cart/Cart';
 import Products from './products/Products';
 import ProductDetail from "./productsDetail/ProductDetail";
 import Categories from "./categories/Categories";
+import CreateProduct from "./createProduct/CreateProduct";
 import NotFound from './utils/notFound/NotFound';
 
 
@@ -25,6 +26,8 @@ const MainPages = () => {
             <Route path="/cart" exact component={Cart} />
             <Route path="/product_detail/:id" exact component={ProductDetail} />
             <Route path="/category" exact component={isAdmin ? Categories : NotFound} />
+            <Route path="/create_product" exact component={isAdmin ? CreateProduct : NotFound} />
+            <Route path="/edit_product/:id" exact component={isAdmin ? CreateProduct : NotFound} />
             <Route path="*" exact component={NotFound} />
         </Switch>
     )

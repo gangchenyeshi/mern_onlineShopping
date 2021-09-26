@@ -25,8 +25,8 @@ class APIfeatures {
         return this;
     }
     sorting(){
-        if(this.queryString.sorting) {
-            const sortBy = this.queryString.sorting.split(',').join(' ')
+        if(this.queryString.sort) {
+            const sortBy = this.queryString.sort.split(',').join(' ')
             console.log(sortBy)
 
             this.query = this.query.sort(sortBy)
@@ -38,7 +38,7 @@ class APIfeatures {
     }
     paginating(){
         const page = this.queryString.page * 1 || 1
-        const limit = this.queryString.page * 1 || 5
+        const limit = this.queryString.limit * 1 || 9
         const skip = (page - 1) * limit;
         this.query = this.query.skip(skip).limit(limit)
     
@@ -53,7 +53,11 @@ const productCtrl = {
             console.log("filtering :", req.query)
             const products = await features.query;
 
-            res.status(200).json(products);
+            res.status(200).json({
+                status:'success',
+                result: products.length,
+                products: products
+            });
         } catch (err) {
             return res.status(500).json({ err: err.message })
         }

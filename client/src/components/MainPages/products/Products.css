@@ -1,3 +1,21 @@
 
 /*----------Product Item------------*/
 @import url('./../utils/productItem/ProductItem.css');
+
+.deleteAll {
+    text-align: right;
+}
+.deleteAll input {
+    height: 24px;
+    width: 24px;
+    transform: translateY(5px);
+    margin: 0 16px;
+}
+.deleteAll span{
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+}
+.deleteAll button {
+    text-transform: uppercase;
+    padding: 4px 8px;
+}

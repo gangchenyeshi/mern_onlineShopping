@@ -27,8 +27,8 @@ function Login() {
 
     return (
         <div className="container-fluid">
-            <div className="row">
-                <div className="col-12 col-md-5 col-lg-3">
+            <div className="row  d-flex justify-content-center ">
+                <div className="col-12 col-md-5 col-lg-3 forms">
                     <form onSubmit={submitLogin}>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail"

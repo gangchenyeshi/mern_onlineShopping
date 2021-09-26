@@ -69,19 +69,19 @@ const Cart = () => {
     return (
         <div className="container-fluid">
             {cart.map(product => (
-                <div className="row mt-4 cart" key={product._id}>
-                    <div className="col-12 col-md-4">
+                <div className="row mt-4 my-cart" key={product._id}>
+                    <div className="col-4">
                         <img src={product.images.url} alt=""
                             className="img-thumbnail rounded float-left"
                         />
                     </div>
-                    <div className="col-12 col-md-6">
+                    <div className="col-6 description">
                         <h3>{product.title}</h3>
                         <h6>Product Id : {product.product_id}</h6>
 
                         <span>$ {product.price * product.quantity}</span>
                         <p>{product.description}</p>
-                        <p>{product.content}</p>
+                        {/* <p>{product.content}</p> */}
 
                         <div className="row d-flex justify-content-start quantity">
                             <button className="col-1" onClick={() => decrement(product._id)}>-</button>
@@ -94,8 +94,8 @@ const Cart = () => {
                     </div>
                 </div>
             ))}
-            <div className="row d-flex justify-content-end total">
-                <h3 className="col-6 col-md-2">Total : ${total}</h3>
+            <div className="row d-flex justify-content-end align-items-center total mt-2 mb-4">
+                <h5 className="col-6 col-md-2">Total : ${total}</h5>
                 <Link className="col-6 col-md-2 payment btn btn-warning" to="#">
                     Payment
                 </Link>

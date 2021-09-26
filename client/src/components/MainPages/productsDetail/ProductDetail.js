@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { GlobalState } from '../../../GlobalState';
 import ProductItem from '../utils/productItem/ProductItem';
-import "./ProductDetail.css"
+import "./ProductDetail.css";
+import LoadMore from "../products/LoadMore";
 
 function ProductDetail() {
     const params = useParams()
@@ -39,23 +40,23 @@ function ProductDetail() {
                     <h3>{detailProduct.title}</h3>
                     <h6>Product Id : {detailProduct.product_id}</h6>
 
-                    <span>$ {detailProduct.price}</span>
+                    <h6>Price : ${detailProduct.price}</h6>
                     <p>{detailProduct.description}</p>
                     <p>{detailProduct.content}</p>
                     <div className="row d-flex">
                         <div className="col-6">
-                            <p> Sold : {detailProduct.sold}</p>
+                            <h6> Sold : {detailProduct.sold}</h6>
                         </div>
                         <div className="col-6 d-flex justify-content-end">
-                            <Link id="btnBuy" className="btn btn-success" to="#!">
-                                Buy
+                            <Link id="btnBuy" className="btn btn-success btn-sm button-back" to="/">
+                                Back
                             </Link>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div className="row d-flex justify-content-center">
+            <hr />
+            <div className="row d-flex justify-content-start">
                 <h2>Similar Products</h2>
                 {
                     products.map(product => {
@@ -69,6 +70,7 @@ function ProductDetail() {
                     })
                 }
             </div>
+            <LoadMore />
         </div>
     )
 }

@@ -19,7 +19,7 @@ function Register() {
         try {
             await axios.post('/user/register', { ...user })
             localStorage.setItem("firstLogin", true)
-            window.location.href = "/login"
+            window.location.href = "/"
         } catch (err) {
             alert(err.response.data.message)
         }
@@ -28,7 +28,7 @@ function Register() {
     return (
         <div className="container-fluid">
             <div className="row">
-                <div className="col-12 col-md-5 col-lg-3">
+                <div className="col-12 col-md-5 col-lg-3 forms">
                     <form onSubmit={submitRegister}>
                         <div className="form-group">
                             <label htmlFor="exampleInputName">User Name</label>

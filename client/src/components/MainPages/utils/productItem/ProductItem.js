@@ -2,11 +2,14 @@ import React from 'react';
 import BtnRender from './BtnRender';
 import "./ProductItem.css";
 
-function ProductItem({ product, isAdmin }) {
+function ProductItem({ product, isAdmin, deleteProduct, handleCheck }) {
+
     return (
         <div className="productCard">
             {
-                isAdmin && <input type="checkbox" checked={product.checked} />
+                isAdmin && <input type="checkbox" checked={product.checked}
+                    onChange={() => handleCheck(product._id)}
+                />
             }
             <img src={product.images.url} alt="" />
 
@@ -15,7 +18,7 @@ function ProductItem({ product, isAdmin }) {
                 <span>$ {product.price}.00</span>
                 <p>{product.description}</p>
             </div>
-            <BtnRender product={product} />
+            <BtnRender product={product} deleteProduct={deleteProduct} />
         </div>
     )
 }
