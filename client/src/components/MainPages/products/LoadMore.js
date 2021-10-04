@@ -7,12 +7,12 @@ function LoadMore() {
     const [result] =state.productsAPI.result;   
 
     return (
-        <div className="container-fluid mb-3">
+        <div className="container-fluid mb-3 mt-3">
             <div className="row d-flex justify-content-center">
                 {
                     result < page * 9 ? ""
                         : <button onClick={() => setPage(page + 1)}
-                            className="btn btn-dark col-6 col-md-4"
+                            className="btn btn-dark col-6 col-md-2"
                         >Load more</button>
                 }
             </div>
