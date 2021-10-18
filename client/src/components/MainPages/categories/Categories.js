@@ -55,7 +55,7 @@ function Categories() {
         }
     }
     return (
-        <div className="container-fluid">
+        <div className="container-fluid page">
             <h4>Category</h4>
             <div className="row d-flex justify-content-around mobile">
                 <div className="col-12 col-md-7 addCategory">

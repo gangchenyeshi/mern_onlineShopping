@@ -1,7 +1,16 @@
-
+.page {
+  height: 75vh !important;
+}
+form {
+  margin: 8px;
+}
+form label {
+  text-align: left;
+  width: 100%;
+  margin: 8px auto 0 ;
+}
 .btnLink a {
     color: #0d6efd;
-    /* color: rgb(88, 142, 179); */
     text-transform: capitalize;
     text-decoration: none;
     font-weight: 400;
@@ -19,4 +28,7 @@
   border: 1px solid #555;
   margin: 24px auto;
   border-radius: 10px;
+}
+.link {
+  text-align: right;
 }

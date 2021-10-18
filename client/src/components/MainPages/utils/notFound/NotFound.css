@@ -1,0 +1,16 @@
+.page {
+    height: 67vh;
+    text-align: center;
+}
+.notFound {
+    font-size: 100px;
+    color: grey;
+}
+.home_btn{			 
+	color: #fff!important;
+    padding: 10px 20px;
+    background: #39ac31;
+    margin: 20px 0;
+    width: 200px;
+    display: inline-block;}
+    

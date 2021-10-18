@@ -26,13 +26,13 @@ function Login() {
     }
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid page">
             <div className="row  d-flex justify-content-center ">
                 <div className="col-12 col-md-5 col-lg-3 forms">
                     <form onSubmit={submitLogin}>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail"
-                                className="mt-1">Email address</label>
+                                className="mt-2">Email address</label>
                             <input type="email"
                                 name="email"
                                 required
@@ -61,7 +61,7 @@ function Login() {
                                 <button type="submit"
                                     className="btn btn-primary col-12 col-sm-5">
                                     Login</button>
-                                <Link to="/register" className="col-12 col-sm-5">
+                                <Link to="/register" className="col-12 col-sm-5 link">
                                     Register</Link>
                             </div>
                         </div>

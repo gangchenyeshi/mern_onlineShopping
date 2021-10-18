@@ -1,13 +1,15 @@
-import React from 'react'
+import React from 'react';
+import "./Footer.css";
 
 function Footer() {
     return (
-        <div className="mt-2 mb-2"> 
+        <div className="container-fluid footer">
             <hr />
-            <div className="mt-10 mb-2 text-center">
+            <div className="mt-10 text-center ">
                 Copyright @ YESHI TSERING GANHCHEN &nbsp; {new Date().getFullYear()}
             </div>
         </div>
     )
 }
 export default Footer
+
