@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { GlobalState } from '../../GlobalState';
 import Login from './auth/Login';
 import Register from './auth/Register';
+import ForgetPassword from './auth/ForgetPassword';
 import Cart from './cart/Cart';
 import Products from './products/Products';
 import ProductDetail from "./productsDetail/ProductDetail";
@@ -23,6 +24,7 @@ const MainPages = () => {
             <Route path="/login" exact component={isLogged ? NotFound : Login} />
             <Route path="/register" exact component={isLogged ? NotFound : Register} />
             
+            <Route path="/forget_password" exact component={ForgetPassword} />
             <Route path="/cart" exact component={Cart} />
             <Route path="/product_detail/:id" exact component={ProductDetail} />
             <Route path="/category" exact component={isAdmin ? Categories : NotFound} />

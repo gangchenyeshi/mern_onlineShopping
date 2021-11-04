@@ -16,4 +16,6 @@ router.get('/info', auth, userCtrl.getUser);
 
 router.patch('/addcart', auth, userCtrl.addCart)
 
+router.put('/forget_password', userCtrl.forgetPassword);
+
 module.exports = router;

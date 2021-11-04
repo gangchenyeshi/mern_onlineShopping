@@ -3,23 +3,22 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "./Login.css";
 
-function Login() {
+function ForgetPassword() {
     const [user, setUser] = useState({
         email: '',
         password: ''
-    });
-
+    })
     const onChangeInput = e => {
         const { name, value } = e.target;
         setUser({ ...user, [name]: value })
     };
 
-    const submitLogin = async (e) => {
+    const submitPassword = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/user/login', { ...user })
-            localStorage.setItem("firstLogin", true)
-            window.location.href = "/"
+            await axios.put('/user/forget_password', { ...user })
+            // localStorage.setItem("firstLogin", true)
+            window.location.href = "/login"
         } catch (err) {
             alert(err.response.data.message)
         }
@@ -27,17 +26,16 @@ function Login() {
 
     return (
         <div className="container-fluid page">
-            <div className="row  d-flex justify-content-center ">
-                <h4 className="mt-3">Login</h4>
+            <div className="row">
+            <h4 className="mt-3">Forget My Password</h4>
                 <div className="col-12 col-md-5 col-lg-3 forms">
-                    <form onSubmit={submitLogin}>
+                    <form onSubmit={submitPassword}>
                         <div className="form-group">
-                            <label htmlFor="exampleInputEmail"
-                                className="mt-2">Email address</label>
+                            <label htmlFor="exampleInputEmail">Email address</label>
                             <input type="email"
                                 name="email"
                                 required
-                                className="form-control mt-1"
+                                className="form-control"
                                 id="exampleInputEmail"
                                 placeholder="Enter email"
                                 value={user.email}
@@ -45,29 +43,21 @@ function Login() {
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputPassword"
-                                className="mt-1">Password</label>
+                            <label htmlFor="exampleInputPassword">New Password</label>
                             <input type="password"
                                 name="password" required
-                                className="form-control mt-1"
+                                className="form-control"
                                 id="exampleInputPassword"
                                 placeholder="Password"
                                 value={user.password}
                                 onChange={onChangeInput}
                             />
                         </div>
-
                         <div className="btnLink">
                             <div className="row d-flex justify-content-between">
-                                <Link to="/forget_password" className="col-12 link">
-                                    Forget password ?</Link>
-                            </div>
-                            <div className="row d-flex justify-content-between">
                                 <button type="submit"
-                                    className="btn btn-primary col-12 col-sm-5">
-                                    Login</button>
-                                <Link to="/register" className="col-12 col-sm-5 link register">
-                                    Register</Link>
+                                    className="btn btn-primary col-12">
+                                    Change Password</button>
                             </div>
                         </div>
                     </form>
@@ -76,5 +66,4 @@ function Login() {
         </div>
     )
 }
-
-export default Login
+export default ForgetPassword

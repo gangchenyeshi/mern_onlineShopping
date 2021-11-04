@@ -102,7 +102,32 @@ const userCtrl = {
         } catch (err) {
             return res.status(500).json({ message: err.message })
         }
+    },
+
+    
+    forgetPassword: async (req, res) => {
+        try {
+            const { email, password } = req.body;
+            const user = await Users.findOne({ email });
+
+            if (!user) return res.status(401).json({ message: "Email Not Found" });
+
+            if (password.length < 8) return res.status(401).json({ message: "Password to short" })
+
+            const passwordHash = await bcrypt.hash(password, 10);
+
+            await Users.findOneAndUpdate(
+                { email: req.body.email }, { password: passwordHash }
+            )
+
+            return res.status(200).json({
+                message: "Password Updated."
+            })
+        } catch (err) {
+            return res.status(500).json({ message: err.message })
+        }
     }
+
 }
 
 const createAccessToken = (user) => {

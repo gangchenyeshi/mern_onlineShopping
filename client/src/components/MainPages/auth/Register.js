@@ -28,6 +28,7 @@ function Register() {
     return (
         <div className="container-fluid page">
             <div className="row">
+                <h4 className="mt-3">Register New User</h4>
                 <div className="col-12 col-md-5 col-lg-3 forms">
                     <form onSubmit={submitRegister}>
                         <div className="form-group">
@@ -70,7 +71,7 @@ function Register() {
                                 <button type="submit"
                                     className="btn btn-primary col-12 col-sm-5">
                                     Register</button>
-                                <Link to="/login" className="col-12 col-sm-5  link">
+                                <Link to="/login" className="col-12 col-sm-5  link register">
                                     Login</Link>
                             </div>
                         </div>
